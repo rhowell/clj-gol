@@ -7,4 +7,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [speclj "3.1.0"]
                  [speclj-tmux "1.0.0"]]
+  :plugins      [[speclj "3.1.0"]
+                 [lein-swank "1.4.5"]
+                 [cider/cider-nrepl "0.7.0"]]
   :test-paths ["spec"])
