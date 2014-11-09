@@ -7,7 +7,7 @@
           (it "will calculate all of its neighbours"
               (let [node [0,0]]
                 (map #(should-contain offsets %)
-                     (calculate-neighbours node)))))
+                     (my-neighbours node)))))
 
 ; Must create a should matcher that checks arrays out of order 
 (describe "Generating a board state"

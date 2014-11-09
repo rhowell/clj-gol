@@ -15,7 +15,9 @@
 ; Counts the number neighbours for this node
 (defn neighbour-count [node state]
   (let [neighbours (my-neighbours node)]
-    (count (clojure.set/intersection (set neighbours) (set state)))))
+    (count (clojure.set/intersection 
+             (set neighbours) 
+             (set state)))))
 
 ; Find all the neighbours and then remove anything in common with state
 (defn calculate-candidates [state]
@@ -26,7 +28,7 @@
 (defn calculate-remainders [state]
   (filter #(or (= (neighbour-count % state) 2) 
                (= (neighbour-count % state) 3)) state))
-  
+
 ; Calculate dead cells that will be reborn
 (defn calculate-genesis [state]
   (let [candidates (calculate-candidates state)]
@@ -37,4 +39,4 @@
   (into (calculate-genesis state)
         (calculate-remainders state)))
 
-        
+
